@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors */
+  --color-page: #000000;
+  --color-hero: #090909;
+  --color-card: #141414;
+  --color-line: #2e2e2e;
+  --color-dot: #292929;
+  --color-brand: #152f75;
+  --color-snow: #f9f9f9;
+  --color-muted: #808080;
+  --color-quiet: #86868b;
+  --color-pill: #e8e8ed;
+  --color-pill-icon: #6e6e73;
+  --color-quote: #a1a1a6;
+
+  /* Fonts (Gotham Rounded placeholder is wired in app/layout.tsx) */
+  --font-gotham: var(--font-gotham-src);
+  --font-inter: var(--font-inter-src);
+}
+
+html {
+  background: var(--color-page);
+}
+
+body {
+  background: var(--color-page);
+  color: #fff;
+  font-family: var(--font-gotham), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
