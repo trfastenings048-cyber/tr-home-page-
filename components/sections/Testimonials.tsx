@@ -39,15 +39,15 @@ export function Testimonials() {
         </div>
 
         {/* Card */}
-        <div className="md:w-[506px]">
-          <AnimatePresence mode="wait">
+        <div className="grid md:w-[506px]">
+          <AnimatePresence initial={false}>
             <motion.figure
               key={index}
-              className="flex flex-col gap-[32px]"
+              className="flex flex-col gap-[32px] [grid-area:1/1]"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4 }}
+              transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
             >
               <blockquote className="flex flex-col gap-[24px]">
                 <QuoteIcon className="size-6 text-quote" />
