@@ -78,5 +78,29 @@ export const testimonials = {
       role: "Head of Product",
       avatar: "/images/avatar-mira-chen.png",
     },
+    {
+      headline: "Our roadmap became obvious.",
+      statement:
+        "Now every priority, owner, and change is visible, so planning feels calmer and more precise.",
+      name: "Daniel Reyes",
+      role: "Startup Founder",
+      avatar: "/images/avatar-daniel-reyes.png",
+    },
+    {
+      headline: "Shipping finally feels clear.",
+      statement:
+        "Northline removed the friction between planning and execution. The team now moves with less context-chasing.",
+      name: "Aanya Shah",
+      role: "Operations Lead",
+      avatar: "/images/avatar-aanya-shah.png",
+    },
+    {
+      headline: "The team finally trusts the dashboard.",
+      statement:
+        "Now updates, timelines, blockers, and decisions live together, so the dashboard actually reflects reality.",
+      name: "Julian Park",
+      role: "Engineering Manager",
+      avatar: "/images/avatar-julian-park.png",
+    },
   ] satisfies Testimonial[],
 };
