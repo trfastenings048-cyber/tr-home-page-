@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Solution } from "@/data/home";
 import { ArrowIcon } from "@/components/icons";
 import { IndexDots } from "./IndexDots";
+import { PlaylistModal } from "./PlaylistModal";
 
 const variants: Record<Solution["variant"], { card: string; bar: string; sizes: string }> = {
   large: { card: "lg:w-[678px] lg:h-[520px]", bar: "px-[18px]", sizes: "(min-width: 1024px) 678px, 100vw" },
@@ -12,13 +13,12 @@ const variants: Record<Solution["variant"], { card: string; bar: string; sizes: 
 
 type SolutionCardProps = Solution & { position: number };
 
-export function SolutionCard({ title, category, href, image, variant, position }: SolutionCardProps) {
+export function SolutionCard({ title, category, href, image, playlists, variant, position }: SolutionCardProps) {
   const v = variants[variant];
-  return (
-    <Link
-      href={href}
-      className={`group flex aspect-[678/520] w-full flex-col overflow-hidden rounded-[10px] bg-card lg:aspect-auto ${v.card}`}
-    >
+  const className = `group flex aspect-[678/520] w-full flex-col overflow-hidden rounded-[10px] bg-card lg:aspect-auto ${v.card}`;
+
+  const content = (
+    <>
       <div className="relative h-[81%] w-full overflow-hidden rounded-t-[10px]">
         <Image
           src={image}
@@ -43,6 +43,20 @@ export function SolutionCard({ title, category, href, image, variant, position }
           <ArrowIcon className="absolute inset-0 -translate-x-full rotate-90 transition-transform duration-300 group-hover:translate-x-0" />
         </span>
       </div>
+    </>
+  );
+
+  if (playlists) {
+    return (
+      <PlaylistModal playlists={playlists} title={title} className={className}>
+        {content}
+      </PlaylistModal>
+    );
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {content}
     </Link>
   );
 }

@@ -1,5 +1,7 @@
 // All home page content lives here. Sections only render what they receive.
 
+import { videoLibrary, type Playlist } from "./videoLibrary";
+
 export type SectionMeta = {
   index: string;
   label: string;
@@ -11,16 +13,12 @@ export type Solution = {
   category: string;
   href: string;
   image: string;
+  /** External page shown full screen (with a back button) at `href`. */
+  embed?: string;
+  /** When set, clicking the card opens these YouTube playlists in a popup instead of navigating. */
+  playlists?: Playlist[];
   /** Layout variant matching the original Framer composition. */
   variant: "large" | "small" | "wide";
-};
-
-export type Testimonial = {
-  headline: string;
-  statement: string;
-  name: string;
-  role: string;
-  avatar: string;
 };
 
 export const hero = {
@@ -28,9 +26,7 @@ export const hero = {
   intro:
     "TR, part of the Trifast plc Group, is a global leader in the design, engineering, manufacture and supply of fastenings and Category ‘C’ components. Supplying major assembly industries, we deliver innovative solutions that enhance efficiency and performance.",
   video: {
-    // Placeholder until the real hero video is available.
-    // Drop the file in /public/videos and set: src: "/videos/hero.mp4"
-    src: undefined as string | undefined,
+    src: "/videos/tr-corporate-overview-2026.mp4" as string | undefined,
     poster: "/images/data-centre.png",
   },
 };
@@ -45,6 +41,7 @@ export const solutions = {
       title: "360 Virtual innovations",
       category: "Virtual walkthrough",
       href: "/360-virtual-innovations",
+      embed: "https://storage.net-fs.com/hosting/8110829/2/",
       image: "/images/virtual-innovations.png",
       variant: "large",
     },
@@ -52,14 +49,16 @@ export const solutions = {
       title: "Data Centre innovation 360",
       category: "Data center",
       href: "/data-centre-innovation-360",
+      embed: "https://storage.net-fs.com/hosting/8110829/5/",
       image: "/images/data-centre.png",
       variant: "small",
     },
     {
       title: "TR Video Library",
       category: "Corporate stories",
-      href: "/tr-video-library",
+      href: "https://www.youtube.com/@TRFasteningsYT/playlists",
       image: "/images/video-library.png",
+      playlists: videoLibrary,
       variant: "wide",
     },
   ] satisfies Solution[],
@@ -67,40 +66,9 @@ export const solutions = {
 
 export const testimonials = {
   header: { index: "03", label: "//Testimonial", meta: "Trusted partners" } satisfies SectionMeta,
-  label: "STORIES",
-  intro: "Stories from teams who found clarity, moved faster, and worked with less noise.",
-  items: [
-    {
-      headline: "We cut weekly status meetings in half.",
-      statement:
-        "Northline made project updates visible, so decisions stopped getting buried and meetings became easier to cut.",
-      name: "Mira Chen",
-      role: "Head of Product",
-      avatar: "/images/avatar-mira-chen.png",
-    },
-    {
-      headline: "Our roadmap became obvious.",
-      statement:
-        "Now every priority, owner, and change is visible, so planning feels calmer and more precise.",
-      name: "Daniel Reyes",
-      role: "Startup Founder",
-      avatar: "/images/avatar-daniel-reyes.png",
-    },
-    {
-      headline: "Shipping finally feels clear.",
-      statement:
-        "Northline removed the friction between planning and execution. The team now moves with less context-chasing.",
-      name: "Aanya Shah",
-      role: "Operations Lead",
-      avatar: "/images/avatar-aanya-shah.png",
-    },
-    {
-      headline: "The team finally trusts the dashboard.",
-      statement:
-        "Now updates, timelines, blockers, and decisions live together, so the dashboard actually reflects reality.",
-      name: "Julian Park",
-      role: "Engineering Manager",
-      avatar: "/images/avatar-julian-park.png",
-    },
-  ] satisfies Testimonial[],
+  video: {
+    src: "/videos/grant-testimonial.mp4",
+    poster: "/images/video-library.png",
+    title: "Grant testimonial",
+  },
 };
