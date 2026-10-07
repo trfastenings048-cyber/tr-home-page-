@@ -22,6 +22,8 @@
 
 html {
   background: var(--color-page);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body {
@@ -29,4 +31,19 @@ body {
   color: #fff;
   font-family: var(--font-gotham), sans-serif;
   -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+
+/* Hide scrollbar for WebKit (Chrome, Safari, Edge, Opera) and Firefox/IE */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
