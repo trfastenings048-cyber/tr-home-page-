@@ -67,8 +67,8 @@ export const solutions = {
 export const testimonials = {
   header: { index: "03", label: "//Testimonial", meta: "Trusted partners" } satisfies SectionMeta,
   video: {
-    src: "/videos/grant-testimonial.mp4",
-    poster: "/images/video-library.png",
+    src: "/Grant_sub.mp4",
+    poster: "/images/grant-testimonial-poster.jpg",
     title: "Grant testimonial",
   },
 };

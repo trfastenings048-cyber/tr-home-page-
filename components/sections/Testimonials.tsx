@@ -16,13 +16,15 @@ export function Testimonials() {
       <FadeIn className="mx-auto max-w-[1120px] px-[16px] md:px-[30px]">
         <video
           className="aspect-video w-full rounded-[10px] bg-card object-cover"
-          src={video.src}
           poster={video.poster}
           aria-label={video.title}
           controls
           playsInline
           preload="metadata"
-        />
+        >
+          <source src={video.src} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </FadeIn>
     </section>
   );
