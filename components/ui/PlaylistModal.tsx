@@ -13,7 +13,7 @@ type PlaylistModalProps = {
   children: ReactNode;
 };
 
-const scrollbar = "[scrollbar-color:var(--color-line)_transparent] [scrollbar-width:thin]";
+const scrollbar = "no-scrollbar";
 
 /** Renders children as a trigger button that opens a YouTube video library in a popup. */
 export function PlaylistModal({ playlists, title, className = "", children }: PlaylistModalProps) {
