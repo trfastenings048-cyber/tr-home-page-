@@ -67,10 +67,10 @@ export const solutions = {
 export const testimonials = {
   header: { index: "03", label: "Corporate Video", meta: "Trusted partners" } satisfies SectionMeta,
   video: {
-    // 10 parts made by scripts/split-video.sh; bump the folder version when the video changes.
-    playlist: "/videos/tr-fastening-v1/index.m3u8",
+    // 5 parts made by scripts/split-video.sh; bump the folder version when the video changes.
+    playlist: "/videos/tr-corporate-overview-v1/index.m3u8",
     codecs: "avc1.640028,mp4a.40.2",
-    poster: "/images/tr-fastening-video-poster.jpg",
-    title: "TR Fastening Video",
+    poster: "/images/tr-corporate-overview-poster.jpg",
+    title: "TR Corporate Overview 2026",
   },
 };

@@ -7,7 +7,7 @@
 #
 # Usage: scripts/split-video.sh <input.mp4> <output-dir> [parts=10]
 # Example:
-#   scripts/split-video.sh "media-source/TR Fastening Video 1080p.mp4" public/videos/tr-fastening-v1 10
+#   scripts/split-video.sh "media-source/TR Corporate Overview 2026.mp4" public/videos/tr-corporate-overview-v1 5
 #
 # Bump the output folder version (v1 -> v2) whenever the video changes: the parts are
 # served with an immutable cache header, so a new URL is the only way to bust caches.

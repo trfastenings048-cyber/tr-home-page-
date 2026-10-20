@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 type SegmentedVideoProps = {
-  /** HLS playlist made by scripts/split-video.sh, e.g. "/videos/tr-fastening-v1/index.m3u8". */
+  /** HLS playlist made by scripts/split-video.sh, e.g. "/videos/tr-corporate-overview-v1/index.m3u8". */
   playlist: string;
   /** MSE codec string of the parts, e.g. 'avc1.640028,mp4a.40.2'. */
   codecs: string;
