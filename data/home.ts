@@ -65,7 +65,7 @@ export const solutions = {
 };
 
 export const testimonials = {
-  header: { index: "03", label: "//Testimonial", meta: "Trusted partners" } satisfies SectionMeta,
+  header: { index: "03", label: "Corporate Video", meta: "Trusted partners" } satisfies SectionMeta,
   video: {
     // 10 parts made by scripts/split-video.sh; bump the folder version when the video changes.
     playlist: "/videos/tr-fastening-v1/index.m3u8",
