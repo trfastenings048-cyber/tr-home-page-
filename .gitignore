@@ -43,3 +43,7 @@ next-env.d.ts
 # large media files
 public/videos/*.mp4
 
+
+# master video files (too big for GitHub) - split them with scripts/split-video.sh
+/media-source/
+public/*.mp4

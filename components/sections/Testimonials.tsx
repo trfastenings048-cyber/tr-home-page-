@@ -1,6 +1,7 @@
 import { testimonials } from "@/data/home";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { SegmentedVideo } from "@/components/ui/SegmentedVideo";
 
 export function Testimonials() {
   const { video } = testimonials;
@@ -14,17 +15,13 @@ export function Testimonials() {
       </div>
 
       <FadeIn className="mx-auto max-w-[1120px] px-[16px] md:px-[30px]">
-        <video
+        <SegmentedVideo
           className="aspect-video w-full rounded-[10px] bg-card object-cover"
+          playlist={video.playlist}
+          codecs={video.codecs}
           poster={video.poster}
-          aria-label={video.title}
-          controls
-          playsInline
-          preload="metadata"
-        >
-          <source src={video.src} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          title={video.title}
+        />
       </FadeIn>
     </section>
   );
